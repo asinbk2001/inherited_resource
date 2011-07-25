@@ -1,0 +1,29 @@
+<h1>Listing categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+    <th>Catalog</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= category.name %></td>
+    <td><%= category.content %></td>
+    <td><%= link_to @catalog.name , catalog_path(@catalog) %></td>
+    <td><%= link_to 'Show', catalog_category_path(@catalog, category) %></td>
+    <td><%= link_to 'Edit', edit_catalog_category_path(@catalog, category) %></td>
+    <td><%= link_to 'Destroy', catalog_category_path(@catalog, category), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Category', new_catalog_category_path(@catalog) %> |
+<%= link_to 'Catalog', catalog_path(@catalog) %>
+

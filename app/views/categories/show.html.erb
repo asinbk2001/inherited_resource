@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @category.name %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @category.content %>
+</p>
+
+<p>
+  <b>Catalog:</b>
+  <%= @catalog.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_catalog_category_path(@category) %> |
+<%= link_to 'View all', catalog_categories_path %> |
+<%= link_to 'Catalog', catalog_path(@catalog) %>
+<br>
+<%= link_to 'List Articles', catalog_category_articles_path(@catalog, @category) %>
+

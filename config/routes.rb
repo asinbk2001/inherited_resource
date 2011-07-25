@@ -1,9 +1,15 @@
 AppInheritedres::Application.routes.draw do
   
-  resources :products do
-		resources :reviews
-	end
-	root :to => "products#index"
+  resources :catalogs do
+    resources :categories do
+      resources :articles
+    end
+  end
+
+  #resources :products do
+	#	resources :reviews
+  #end
+	root :to => "catalogs#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

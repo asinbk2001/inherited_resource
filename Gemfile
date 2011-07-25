@@ -8,7 +8,7 @@ gem 'rails', '3.0.9'
 gem 'mysql'
 gem 'inherited_resources'
 gem 'has_scope'
-
+gem 'nifty-generators'
 # Use unicorn as the web server
 # gem 'unicorn'
 

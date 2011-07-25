@@ -1,0 +1,27 @@
+<h1>Listing articles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= article.name %></td>
+    <td><%= article.content %></td>
+    <td><%= article.category_id %></td>
+    <td><%= link_to 'Show', catalog_category_article_path(@category, article) %></td>
+    <td><%= link_to 'Edit', edit_catalog_category_article_path(@category, article) %></td>
+    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Article', new_catalog_category_article_path(@category) %>
